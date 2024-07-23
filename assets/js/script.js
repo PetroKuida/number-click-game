@@ -1,15 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
     const gameBoard = document.getElementById('game-board');
     const difficultySelect = document.getElementById('difficulty');
-    const gridSize = parseInt(difficultySelect.value);
     const startBtn = document.getElementById('start-btn');
+
     startBtn.addEventListener('click', runGame);
 
+    let numbers = [];
+    let currentNumber = 1;
+
     function runGame() {
-        numbers = shuffle(createNumbersArray(gridSize * gridSize));
+        const gridSize = parseInt(difficultySelect.value);
+        //numbers = shuffle(createNumbersArray(gridSize * gridSize));
         gameBoard.innerHTML = '';
         currentNumber = 1;
-        createBoard();
+        createBoard(gridSize);
         startBtn.disabled = true;
         startTimer();
     }
@@ -22,8 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
         return array;
     }
 
-    function createBoard() {
-
+    function createBoard(gridSize) {
+        gameBoard.style.gridTemplateColumns = `repeat(${gridSize}, auto)`;
+        gameBoard.style.width = `${gridSize * 60}px`;  // Adjust width based on grid size
+        numbers.forEach(number => {
+            const cell = document.createElement('div');
+            cell.className = 'cell';
+            cell.textContent = number;
+            cell.addEventListener('click', () => handleCellClick(cell, number));
+            gameBoard.appendChild(cell);
+        });
     }
 
     function handleCellClick() {
