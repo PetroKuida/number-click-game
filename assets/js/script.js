@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const gameBoard = document.getElementById('game-board');
     const difficultySelect = document.getElementById('difficulty');
+    const difficultyLabel = document.getElementById('difficulty-label');
     const startBtn = document.getElementById('start-btn');
     const cancelBtn = document.getElementById('cancel-btn');
 
@@ -26,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
         createBoard(gridSize);
         startBtn.style.display = 'none';
         cancelBtn.style.display = 'inline-block';
-        difficultySelect.disabled = true;
+        difficultySelect.style.display = 'none';
+        difficultyLabel.style.display = 'none';
         startTimer();
     }
 
@@ -59,7 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const timeTaken = Math.floor((Date.now() - startTime) / 1000);
                 startBtn.style.display = 'inline-block';
                 cancelBtn.style.display = 'none';
-                difficultySelect.disabled = false;
+                difficultySelect.style.display = 'inline-block';
+                difficultyLabel.style.display = 'inline-block';
                 gameBoard.innerHTML = '';
                 displayCompletionMessage(timeTaken);
                 updateHighScore(timeTaken);
@@ -103,7 +106,8 @@ document.addEventListener('DOMContentLoaded', function () {
         gameBoard.innerHTML = ''; // Clear the game board
         startBtn.style.display = 'inline-block';
         cancelBtn.style.display = 'none';
-        difficultySelect.disabled = false; // Enable the difficulty select
+        difficultySelect.style.display = 'inline-block';
+        difficultyLabel.style.display = 'inline-block';
         document.getElementById('time').textContent = '0'; // Reset the timer display
         currentNumber = 1; // Reset the current number
     }

@@ -85,6 +85,7 @@ body {
 
 /* Basic styling for the dropdown select box */
 #difficulty {
+    display: inline-block;
     background-color: #ffffff;
     border: 2px solid #007bff;
     border-radius: 4px;
