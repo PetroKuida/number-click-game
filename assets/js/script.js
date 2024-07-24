@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const gameBoard = document.getElementById('game-board');
     const difficultySelect = document.getElementById('difficulty');
     const startBtn = document.getElementById('start-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
 
     let numbers = [];
     let currentNumber = 1;
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let bestScores = { 4: null, 5: null, 6: null };
 
     startBtn.addEventListener('click', runGame);
+    cancelBtn.addEventListener('click', cancelGame);
 
     function runGame() {
         const gridSize = parseInt(difficultySelect.value);
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentNumber = 1;
         createBoard(gridSize);
         startBtn.disabled = true;
+        difficultySelect.disabled = true;
         startTimer();
     }
 
@@ -55,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const timeTaken = Math.floor((Date.now() - startTime) / 1000);
                 updateHighScore(timeTaken);
                 startBtn.disabled = false;
+                difficultySelect.disabled = false;
             }
         } else {
             const originalColor = cell.style.backgroundColor;
@@ -87,5 +91,13 @@ document.addEventListener('DOMContentLoaded', function () {
             bestScores[gridSize] = timeTaken;
             bestTimes[gridSize].textContent = timeTaken;
         }
+    }
+
+    function cancelGame() {
+        clearInterval(timer); // Stop the timer if running
+        gameBoard.innerHTML = ''; // Clear the game board
+        startBtn.disabled = false; // Enable the start button
+        document.getElementById('time').textContent = '0'; // Reset the timer display
+        currentNumber = 1; // Reset the current number
     }
 })
