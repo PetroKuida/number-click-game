@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         clearInterval(timer); // Stop the timer if running
         gameBoard.innerHTML = ''; // Clear the game board
         startBtn.disabled = false; // Enable the start button
+        difficultySelect.disabled = false; // Enable the difficulty select
         document.getElementById('time').textContent = '0'; // Reset the timer display
         currentNumber = 1; // Reset the current number
     }
