@@ -68,6 +68,7 @@ body {
 
 #cancel-btn {
     background-color: #f44336;
+    display: none;
 }
 
 #cancel-btn:hover {

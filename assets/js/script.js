@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentNumber = 1;
         createBoard(gridSize);
         startBtn.style.display = 'none';
+        cancelBtn.style.display = 'inline-block';
         difficultySelect.disabled = true;
         startTimer();
     }
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 clearInterval(timer);
                 const timeTaken = Math.floor((Date.now() - startTime) / 1000);
                 startBtn.style.display = 'inline-block';
+                cancelBtn.style.display = 'none';
                 difficultySelect.disabled = false;
                 gameBoard.innerHTML = '';
                 displayCompletionMessage(timeTaken);
@@ -100,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         clearInterval(timer); // Stop the timer if running
         gameBoard.innerHTML = ''; // Clear the game board
         startBtn.style.display = 'inline-block';
+        cancelBtn.style.display = 'none';
         difficultySelect.disabled = false; // Enable the difficulty select
         document.getElementById('time').textContent = '0'; // Reset the timer display
         currentNumber = 1; // Reset the current number
