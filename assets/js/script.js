@@ -56,10 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (currentNumber > numbers.length) {
                 clearInterval(timer);
                 const timeTaken = Math.floor((Date.now() - startTime) / 1000);
-                updateHighScore(timeTaken);
                 startBtn.disabled = false;
                 difficultySelect.disabled = false;
                 gameBoard.innerHTML = '';
+                displayCompletionMessage(timeTaken);
+                updateHighScore(timeTaken);
             }
         } else {
             const originalColor = cell.style.backgroundColor;
@@ -91,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (bestScores[gridSize] === null || timeTaken < bestScores[gridSize]) {
             bestScores[gridSize] = timeTaken;
             bestTimes[gridSize].textContent = timeTaken;
+            alert("New best time!")
         }
     }
 
@@ -100,5 +102,10 @@ document.addEventListener('DOMContentLoaded', function () {
         startBtn.disabled = false; // Enable the start button
         document.getElementById('time').textContent = '0'; // Reset the timer display
         currentNumber = 1; // Reset the current number
+    }
+
+    function displayCompletionMessage(timeTaken) {
+        let message = `Game Completed!\nTime Taken: ${timeTaken} seconds.`;
+        alert(message);
     }
 })
