@@ -47,8 +47,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (currentNumber > numbers.length) {
                 clearInterval(timer);
                 const timeTaken = Math.floor((Date.now() - startTime) / 1000);
+                updateBestTime(timeTaken);
                 startBtn.disabled = false;
             }
+        } else {
+            const originalColor = cell.style.backgroundColor;
+            cell.style.backgroundColor = '#ff4c4c';
+            setTimeout(() => {
+                cell.style.backgroundColor = originalColor;
+            }, 500);  // Duration of the color change
         }
     }
 
