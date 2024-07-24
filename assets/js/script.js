@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentNumber = 1;
     let timer;
     let startTime;
+    const bestTimes = {
+        4: document.getElementById('best-easy'),
+        5: document.getElementById('best-normal'),
+        6: document.getElementById('best-hard')
+    };
+    let bestScores = { 4: null, 5: null, 6: null };
 
     startBtn.addEventListener('click', runGame);
 
@@ -47,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (currentNumber > numbers.length) {
                 clearInterval(timer);
                 const timeTaken = Math.floor((Date.now() - startTime) / 1000);
-                updateBestTime(timeTaken);
+                updateHighScore(timeTaken);
                 startBtn.disabled = false;
             }
         } else {
@@ -75,7 +81,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 
-    function updateHighScore() {
-
+    function updateHighScore(timeTaken) {
+        const gridSize = parseInt(difficultySelect.value);
+        if (bestScores[gridSize] === null || timeTaken < bestScores[gridSize]) {
+            bestScores[gridSize] = timeTaken;
+            bestTimes[gridSize].textContent = timeTaken;
+        }
     }
 })
