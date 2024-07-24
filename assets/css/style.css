@@ -80,3 +80,21 @@ body {
 #high-score p {
     margin: 5px 0;
 }
+
+/* Basic styling for the dropdown select box */
+#difficulty {
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    width: 100%; /* Full width */
+    appearance: none; /* Remove default arrow */
+}
+
+/* Style when the dropdown is hovered */
+#difficulty:hover {
+    background-color: #f0f0f0;
+}
