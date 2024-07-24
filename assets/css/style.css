@@ -57,19 +57,20 @@ body {
     background-color: #45a049;
 }
 
-#start-btn.button {
+#start-btn {
     background-color: #4CAF50;
+    display: inline-block;
 }
 
-#start-btn.button:hover {
+#start-btn:hover {
     background-color: #45a049;
 }
 
-#cancel-btn.button {
+#cancel-btn {
     background-color: #f44336;
 }
 
-#cancel-btn.button:hover {
+#cancel-btn:hover {
     background-color: #c62828;
 }
 
