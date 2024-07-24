@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateHighScore(timeTaken);
                 startBtn.disabled = false;
                 difficultySelect.disabled = false;
+                gameBoard.innerHTML = '';
             }
         } else {
             const originalColor = cell.style.backgroundColor;
