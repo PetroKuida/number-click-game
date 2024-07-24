@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const difficultySelect = document.getElementById('difficulty');
     const startBtn = document.getElementById('start-btn');
 
-    startBtn.addEventListener('click', runGame);
-
     let numbers = [];
     let currentNumber = 1;
+    let timer;
+    let startTime;
+
+    startBtn.addEventListener('click', runGame);
 
     function runGame() {
         const gridSize = parseInt(difficultySelect.value);
@@ -38,8 +40,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function handleCellClick() {
-
+    function handleCellClick(cell, number) {
+        if (number === currentNumber) {
+            cell.classList.add('hidden');
+            currentNumber++;
+            if (currentNumber > numbers.length) {
+                clearInterval(timer);
+                const timeTaken = Math.floor((Date.now() - startTime) / 1000);
+                startBtn.disabled = false;
+            }
+        }
     }
 
     function shuffle(array) {
@@ -51,7 +61,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function startTimer() {
-
+        startTime = Date.now();
+        timer = setInterval(() => {
+            const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+            document.getElementById('time').textContent = elapsedTime;
+        }, 1000);
     }
 
     function updateHighScore() {
