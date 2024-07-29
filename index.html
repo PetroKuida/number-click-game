@@ -7,31 +7,38 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="game-container">
+    <header>
         <h1>Number Click Game</h1>
-        <div>
-            <label id="difficulty-label" for="difficulty">Select difficulty: </label>
-            <select id="difficulty">
-                <option value="4">Easy (4x4)</option>
-                <option value="5">Normal (5x5)</option>
-                <option value="6">Hard (6x6)</option>
-            </select>
-        </div>
-        <div id="game-board" class="game-board">
+    </header>
+    <main>
+        <div class="game-container">
+            <div>
+                <label id="difficulty-label" for="difficulty">Select difficulty: </label>
+                <select id="difficulty">
+                    <option value="4">Easy (4x4)</option>
+                    <option value="5">Normal (5x5)</option>
+                    <option value="6">Hard (6x6)</option>
+                </select>
+            </div>
+            <div id="game-board" class="game-board">
 
+            </div>
+            <div>
+                <p>Time: <span id="time">0</span> seconds</p>
+            </div>
+            <button id="start-btn" class="button">Start Game</button>
+            <button id="cancel-btn" class="button">Cancel Game</button>
+            <div id="high-score">
+                <h2>High Score</h2>
+                <p>Easy: <span id="best-easy">0</span> seconds</p>
+                <p>Normal: <span id="best-normal">0</span> seconds</p>
+                <p>Hard: <span id="best-hard">0</span> seconds</p>
+            </div>
         </div>
-        <div>
-            <p>Time: <span id="time">0</span> seconds</p>
-        </div>
-        <button id="start-btn" class="button">Start Game</button>
-        <button id="cancel-btn" class="button">Cancel Game</button>
-        <div id="high-score">
-            <h2>High Score</h2>
-            <p>Easy: <span id="best-easy">0</span> seconds</p>
-            <p>Normal: <span id="best-normal">0</span> seconds</p>
-            <p>Hard: <span id="best-hard">0</span> seconds</p>
-        </div>
-    </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Number Click Game</p>
+    </footer>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
