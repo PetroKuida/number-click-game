@@ -105,3 +105,7 @@ body {
 #difficulty:hover {
     background-color: #f0f0f0;
 }
+
+#description {
+    width: 75%;
+}
