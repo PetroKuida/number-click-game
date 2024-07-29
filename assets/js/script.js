@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (bestScores[gridSize] === null || timeTaken < bestScores[gridSize]) {
             bestScores[gridSize] = timeTaken;
             bestTimes[gridSize].textContent = timeTaken;
-            alert("New best time!")
+            alert("New best time!");
         }
     }
 
@@ -116,4 +116,4 @@ document.addEventListener('DOMContentLoaded', function () {
         let message = `Game Completed!\nTime Taken: ${timeTaken} seconds.`;
         alert(message);
     }
-})
+});
