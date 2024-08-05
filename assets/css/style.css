@@ -109,3 +109,37 @@ body {
 #description {
     width: 75%;
 }
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+
+    .cell {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
+    }
+
+    .button {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    #game-board {
+        gap: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .cell {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+
+    .button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+}
