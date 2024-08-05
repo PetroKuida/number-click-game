@@ -3,7 +3,6 @@ body {
     font-family: 'Lato', sans-serif;
     padding: 20px 0;
     background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-    margin: 0;
     text-align: center;
     color: #333;
     display: flex;
@@ -14,7 +13,7 @@ body {
 
 .game-container {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
@@ -168,7 +167,6 @@ header h1 {
 
     #game-board {
         gap: 3px;
-        width: 310px x!important;
     }
 
 }
