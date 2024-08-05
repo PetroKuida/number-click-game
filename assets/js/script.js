@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Get references to DOM elements for easy access
     const gameBoard = document.getElementById('game-board');
     const difficultySelect = document.getElementById('difficulty');
     const difficultyLabel = document.getElementById('difficulty-label');
@@ -30,9 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Event listeners for start and cancel buttons
     startBtn.addEventListener('click', runGame);
     cancelBtn.addEventListener('click', cancelGame);
 
+    // Function to start the game
     function runGame() {
         const gridSize = parseInt(difficultySelect.value);
         numbers = shuffle(createNumbersArray(gridSize * gridSize));
@@ -47,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         startTimer();
     }
 
+    // Function to create an array of numbers from 1 to size
     function createNumbersArray(size) {
         const array = [];
         for (let i = 1; i <= size; i++) {
@@ -55,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return array;
     }
 
+    // Function to create the game board based on grid size
     function createBoard(gridSize) {
         gameBoard.style.gridTemplateColumns = `repeat(${gridSize}, auto)`;
         gameBoard.style.width = `${gridSize * 50}px`;  // Adjust width based on grid size
@@ -67,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Function to handle cell clicks during the game
     function handleCellClick(cell, number) {
         if (number === currentNumber) {
             cell.classList.add('hidden');
@@ -87,10 +93,11 @@ document.addEventListener('DOMContentLoaded', function () {
             cell.style.backgroundColor = '#ff4c4c';
             setTimeout(() => {
                 cell.style.backgroundColor = originalColor;
-            }, 500);  // Duration of the color change
+            }, 500);
         }
     }
 
+    // Function to shuffle an array so each game has unic game board
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -99,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return array;
     }
 
+    // Function to start the timer for the game
     function startTimer() {
         startTime = Date.now();
         timer = setInterval(() => {
@@ -107,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 
+    // Function to update high score if new record is achieved
     function updateHighScore(timeTaken) {
         const gridSize = parseInt(difficultySelect.value);
         if (bestScores[gridSize] === null || timeTaken < bestScores[gridSize]) {
@@ -117,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Function to cancel the current game and set everything back to initial state
     function cancelGame() {
         clearInterval(timer); // Stop the timer if running
         gameBoard.innerHTML = ''; // Clear the game board
@@ -129,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentNumber = 1; // Reset the current number
     }
 
+    // Function to display completion message in form of alert when the game is finished
     function displayCompletionMessage(timeTaken) {
         let message = `Game Completed!\nTime Taken: ${timeTaken} seconds.`;
         alert(message);

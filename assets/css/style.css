@@ -1,3 +1,4 @@
+/* General Styles for the Body */
 body {
     font-family: 'Lato', sans-serif;
     padding: 20px 0;
@@ -35,6 +36,7 @@ header h1 {
     font-weight: 700;
 }
 
+/* Styles for Game Cells */
 .cell {
     display: flex;
     justify-content: center;
@@ -61,6 +63,7 @@ header h1 {
     transform: scale(1.1);
 }
 
+/* Button Styles */
 .button {
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -93,6 +96,7 @@ header h1 {
     background-color: #c62828;
 }
 
+/* High Score Section Styles */
 #high-score {
     margin-top: 20px;
 }
@@ -111,8 +115,8 @@ header h1 {
     font-size: 16px;
     color: #333;
     cursor: pointer;
-    width: 100%; /* Full width */
-    appearance: none; /* Remove default arrow */
+    width: 100%;
+    appearance: none;
 }
 
 /* Style when the dropdown is hovered */
@@ -124,7 +128,7 @@ header h1 {
     width: 75%;
     margin-bottom: 20px;
     text-align: left;
-    margin: 0 auto; /* Center the text block */
+    margin: 0 auto;
 }
 
 /* Media Queries for responsiveness */

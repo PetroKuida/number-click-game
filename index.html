@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number Click Game</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <!-- Main title displayed at the top -->
         <h1 id="header">Number Click Game</h1>
     </header>
     <main>
@@ -18,6 +20,7 @@
                 <br><br>For example: Easy - 4x4 grid with 4 cells on each side.
                 <br><br>Select a difficulty level and click the Start Game button to begin. Click the Cancel Game button to cancel the game.
             </p><br>
+            <!-- Difficulty selection for the game; changes grid size -->
             <div>
                 <label id="difficulty-label" for="difficulty">Select difficulty: </label>
                 <select id="difficulty">
@@ -28,8 +31,9 @@
             </div>
 
             <div id="game-board" class="game-board">
-
+                <!-- Game board dynamically generated considering selected difficulty level -->
             </div>
+            <!-- Timer display for tracking game duration -->
             <div>
                 <p>Time: <span id="time">0</span> seconds</p>
             </div>
