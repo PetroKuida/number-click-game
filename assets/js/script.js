@@ -15,7 +15,20 @@ document.addEventListener('DOMContentLoaded', function () {
         5: document.getElementById('best-normal'),
         6: document.getElementById('best-hard')
     };
-    let bestScores = { 4: null, 5: null, 6: null };
+
+    // Initialize best scores from local storage
+    let bestScores = {
+        4: localStorage.getItem('best-easy') ? parseInt(localStorage.getItem('best-easy')) : null,
+        5: localStorage.getItem('best-normal') ? parseInt(localStorage.getItem('best-normal')) : null,
+        6: localStorage.getItem('best-hard') ? parseInt(localStorage.getItem('best-hard')) : null
+    };
+
+    // Update high score display on page load
+    for (const [gridSize, timeElement] of Object.entries(bestTimes)) {
+        if (bestScores[gridSize] !== null) {
+            timeElement.textContent = bestScores[gridSize];
+        }
+    }
 
     startBtn.addEventListener('click', runGame);
     cancelBtn.addEventListener('click', cancelGame);
@@ -98,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (bestScores[gridSize] === null || timeTaken < bestScores[gridSize]) {
             bestScores[gridSize] = timeTaken;
             bestTimes[gridSize].textContent = timeTaken;
+            localStorage.setItem(`best-${difficultySelect.options[difficultySelect.selectedIndex].text.toLowerCase().split(" ")[0]}`, timeTaken);
             alert("New best time!");
         }
     }
