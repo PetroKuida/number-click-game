@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const difficultyLabel = document.getElementById('difficulty-label');
     const startBtn = document.getElementById('start-btn');
     const cancelBtn = document.getElementById('cancel-btn');
-    const description = document.getElementById('description');
+    const header = document.getElementById('header');
 
     let numbers = [];
     let currentNumber = 1;
