@@ -127,15 +127,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to cancel the current game and set everything back to initial state
     function cancelGame() {
-        clearInterval(timer); // Stop the timer if running
-        gameBoard.innerHTML = ''; // Clear the game board
+        clearInterval(timer);
+        gameBoard.innerHTML = '';
         startBtn.style.display = 'inline-block';
         cancelBtn.style.display = 'none';
         difficultySelect.style.display = 'inline-block';
         difficultyLabel.style.display = 'inline-block';
         gameBoard.style.display = 'none';
-        document.getElementById('time').textContent = '0'; // Reset the timer display
-        currentNumber = 1; // Reset the current number
+        document.getElementById('time').textContent = '0';
+        currentNumber = 1;
     }
 
     // Function to display completion message in form of alert when the game is finished
