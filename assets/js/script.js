@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cancelBtn.style.display = 'inline-block';
         difficultySelect.style.display = 'none';
         difficultyLabel.style.display = 'none';
+        gameBoard.style.display = 'grid';
         startTimer();
     }
 
@@ -77,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cancelBtn.style.display = 'none';
                 difficultySelect.style.display = 'inline-block';
                 difficultyLabel.style.display = 'inline-block';
-                gameBoard.innerHTML = '';
+                gameBoard.style.display = 'none';
                 displayCompletionMessage(timeTaken);
                 updateHighScore(timeTaken);
             }
@@ -123,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cancelBtn.style.display = 'none';
         difficultySelect.style.display = 'inline-block';
         difficultyLabel.style.display = 'inline-block';
+        gameBoard.style.display = 'none';
         document.getElementById('time').textContent = '0'; // Reset the timer display
         currentNumber = 1; // Reset the current number
     }
