@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function createBoard(gridSize) {
         gameBoard.style.gridTemplateColumns = `repeat(${gridSize}, auto)`;
-        gameBoard.style.width = `${gridSize * 60}px`;  // Adjust width based on grid size
+        gameBoard.style.width = `${gridSize * 50}px`;  // Adjust width based on grid size
         numbers.forEach(number => {
             const cell = document.createElement('div');
             cell.className = 'cell';

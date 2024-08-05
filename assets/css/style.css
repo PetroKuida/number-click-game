@@ -27,7 +27,7 @@ body {
     border-radius: 10px;
     display: none;
     gap: 5px;
-    margin: 20px auto;
+    margin: auto;
 }
 
 header h1 {
@@ -40,8 +40,8 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background-color: #fff;
     border: 1px solid #c8e6c9;
     cursor: pointer;
@@ -123,6 +123,9 @@ header h1 {
 
 #description {
     width: 75%;
+    margin-bottom: 20px;
+    text-align: left;
+    margin: 0 auto; /* Center the text block */
 }
 
 /* Media Queries for responsiveness */
@@ -132,6 +135,7 @@ header h1 {
         width: 45px;
         height: 45px;
         font-size: 1.4rem;
+        margin: auto;
     }
 
     .button {
@@ -147,14 +151,21 @@ header h1 {
 @media (max-width: 480px) {
 
     .cell {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         font-size: 1.3rem;
+        margin: 0;
+        padding: 0;
     }
 
     .button {
         padding: 6px 12px;
         font-size: 0.8rem;
+    }
+
+    #game-board {
+        gap: 3px;
+        width: 310px x!important;
     }
 
 }
