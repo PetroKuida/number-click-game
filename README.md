@@ -2,7 +2,7 @@
 
 [Link to a live site](https://petrokuida.github.io/number-click-game/)
 
-![Responsive view of Number Click Game](docs/images/your_image.png)
+![Responsive view of Number Click Game](assets/images/amiresponsive.png)
 
 ## Introduction
 
@@ -14,22 +14,23 @@ The Number Click Game is an interactive and engaging game designed to test playe
 - The game board dynamically adjusts its size based on the selected difficulty level.
 - Players can choose between Easy (4x4), Normal (5x5), and Hard (6x6) grids.
 
-![Game Board](docs/images/game_board.png)
+![Game Board](assets/images/game-board.png)
 
 #### Timer Display:
 - A timer tracks how long it takes for players to complete the game, adding a competitive element.
 
-![Timer](docs/images/timer.png)
+![Timer](assets/images/timer.png)
 
 #### High Score Tracking:
 - The game saves the best times for each difficulty level using local storage, allowing players to challenge their previous records.
 
-![High Score](docs/images/high_score.png)
+![High Score](assets/images/high-score.png)
 
 #### Buttons:
 - The game includes "Start Game" and "Cancel Game" buttons for easy gameplay control.
 
-![Buttons](docs/images/buttons.png)
+![Buttons](assets/images/start-game.png)
+![Buttons](assets/images/cancel-game.png)
 
 ## Testing
 
@@ -37,12 +38,14 @@ The Number Click Game is an interactive and engaging game designed to test playe
 **Issue 001**  
 Incorrect timer display when game is canceled.  
 **Resolution**: Reset timer value to zero when the game is canceled.  
-![Issue 001](docs/testing/issue_001.png)
 
 **Issue 002**  
 Game board not updating correctly on difficulty change.  
-**Resolution**: Reset game board upon starting a new game.  
-![Issue 002](docs/testing/issue_002.png)
+**Resolution**: Reset game board upon starting a new game.
+
+**Issue 003**
+Cell color stays red after double-clicking a number faster than the timer can update.
+**Resolution**: Decrese the timer interval to 100ms.
 
 ### Unresolved Bugs
 - No unresolved bugs at this time.
@@ -76,7 +79,7 @@ The game was tested primarily on Google Chrome, with additional testing on:
 - 0 errors
 - 0 warnings
 
-![HTML validator results](docs/testing/html_validation.png)
+![HTML validator results](assets/images/html-validator.png)
 
 #### CSS
 [CSS validator](https://jigsaw.w3.org/css-validator/)
@@ -84,14 +87,21 @@ The game was tested primarily on Google Chrome, with additional testing on:
 - 0 errors
 - 0 warnings
 
-![CSS validator results](docs/testing/css_validation.png)
+![CSS validator results](assets/images/css-validator.png)
+
+#### JavaScript
+[JS Hint](https://jshint.com/)
+- 0 errors
+- 0 warnings
+
+![JS Hint results](assets/images/js-validator.png)
 
 #### Accessibility (Chrome Lighthouse)
 **Desktop**:
-![Lighthouse desktop](docs/testing/lighthouse_desktop.png)
+![Lighthouse desktop](assets/images/lighthouse-desktop.png)
 
 **Mobile**:
-![Lighthouse mobile](docs/testing/lighthouse_mobile.png)
+![Lighthouse mobile](assets/images/lighthouse-mobile.png)
 
 ## Deployment
 - The site was deployed to GitHub Pages. The steps to deploy are as follows:
