@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
             cell.style.backgroundColor = '#ff4c4c';
             setTimeout(() => {
                 cell.style.backgroundColor = originalColor;
-            }, 500);
+            }, 100);
         }
     }
 
